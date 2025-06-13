@@ -1,0 +1,131 @@
+/*
+ * Custom styles for Service Area Checker application
+ * Matching Squarespace branding from provided CSS snippets
+ */
+
+/* Global variables (approximate, Squarespace defines these in :root) */
+/* For a true match, you'd include the Squarespace :root variables if possible,
+   but we'll hardcode the resolved values for simplicity in this standalone file. */
+:root {
+    --squarespace-green-bg: rgb(32, 157, 80);
+    --squarespace-dark-text: rgb(29, 35, 28);
+    --squarespace-white-text: #FFFFFF; /* From --safeInverseAccent-hsl */
+    --squarespace-accent-green: hsla(143.04, 66.13756614%, 37.05882353%, 1); /* From --accent-hsl */
+    --squarespace-heading-font: "swear-display", serif; /* Assumed font stack */
+    --squarespace-body-font: "neue-haas-grotesk-text", sans-serif; /* Assumed font stack */
+    --squarespace-form-field-radius: 5px;
+    --squarespace-form-field-border-thickness: 1px;
+    --squarespace-form-field-padding-v: 10px;
+    --squarespace-form-field-padding-h: 10px;
+    --squarespace-heading-1-size: 5.8rem; /* For exact sizing if you want to use it */
+    --squarespace-base-font-size: 18px; /* For overall scaling */
+}
+
+
+/* --- General Body & Container Styling --- */
+html, body {
+    margin: 0; /* Remove default body margin */
+    padding: 0;
+    font-family: var(--squarespace-body-font);
+    font-size: var(--squarespace-base-font-size);
+    background-color: var(--squarespace-green-bg); /* Squarespace's --siteBackgroundColor */
+    color: var(--squarespace-white-text); /* Assumed --safeInverseAccent-hsl for text on green bg */
+    line-height: 1.4em; /* From --body-font-line-height */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.container {
+    max-width: 800px; /* From Squarespace .container */
+    margin: 40px auto; /* Add more vertical margin for spacing */
+    padding: 20px;
+    background-color: var(--squarespace-white-text); /* White background for content block */
+    border-radius: 8px; /* Matching your earlier styling, adjust if Squarespace uses different */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: var(--squarespace-dark-text); /* Dark text for content on white background */
+}
+
+/* --- Headings --- */
+h1 {
+    font-family: var(--squarespace-heading-font);
+    font-weight: 400; /* From --heading-font-font-weight */
+    text-align: center;
+    color: var(--squarespace-dark-text); /* Dark text for headings on white background */
+    font-size: 2.5rem; /* Adjusted to fit better without full Squarespace font scaling */
+    letter-spacing: -.02em; /* From --heading-font-letter-spacing */
+    line-height: 1.2em; /* From --heading-font-line-height */
+    margin-bottom: 20px;
+}
+
+/* --- Address Checker Form & Result --- */
+#addressChecker {
+    padding: 20px;
+    /* Inherit background/text color from container */
+    border: none; /* Remove default border */
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+#addressChecker p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1rem; /* Equivalent to --normal-text-size */
+}
+
+#addressInput {
+    width: calc(100% - (2 * var(--squarespace-form-field-padding-h)) - (2 * var(--squarespace-form-field-border-thickness)));
+    padding: var(--squarespace-form-field-padding-v) var(--squarespace-form-field-padding-h);
+    margin-bottom: 15px;
+    border: var(--squarespace-form-field-border-thickness) solid #ccc; /* Default grey border */
+    border-radius: var(--squarespace-form-field-radius);
+    box-sizing: border-box; /* Include padding/border in width */
+    font-size: 1rem;
+    color: var(--squarespace-dark-text); /* Input text color */
+    background-color: var(--squarespace-white-text);
+}
+
+button {
+    background-color: var(--squarespace-accent-green); /* Primary button background */
+    color: var(--squarespace-white-text); /* Primary button text color */
+    padding: var(--squarespace-form-field-padding-v) var(--squarespace-form-field-padding-h); /* Use form field padding for consistency */
+    border: none;
+    border-radius: var(--squarespace-form-field-radius); /* Use form field radius */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600; /* Often primary buttons are bold */
+    transition: background-color 0.3s ease;
+    display: block; /* Make button full width if desired, or inline-block for fitting content */
+    width: 100%; /* Make button full width */
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: color-mix(in srgb, var(--squarespace-accent-green) 90%, black); /* Slightly darker on hover */
+}
+
+#result {
+    margin-top: 20px; /* Adjust spacing */
+    font-weight: bold;
+    text-align: center;
+    padding: 15px; /* Increase padding for more prominence */
+    border-radius: var(--squarespace-form-field-radius);
+    background-color: rgba(233, 236, 239, 0.5); /* Light background for result box */
+    line-height: 1.4em; /* For multi-line text */
+}
+
+#result a {
+    color: var(--squarespace-accent-green); /* Link color matches button accent */
+    text-decoration: underline;
+}
+
+/* --- Map Styling --- */
+#map {
+    height: 500px !important;
+    width: 100%;
+    margin-top: 30px; /* More spacing from form */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Matching overall aesthetic */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* Subtle shadow for map */
+}

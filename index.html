@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Area Checker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../service-territory-map-miscfiles/style-basic.css">
+    <style>
+        /* Basic styling for the map container */
+        #map {
+            height: 500px !important;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Bee Online Advantage Upcoming Service Area</h1>
+
+        <div id="addressChecker">
+            <p>Enter your address below to see if it's in our upcoming service territory.</p>
+            <form id="checkAddressForm">
+                <input type="text" id="addressInput" placeholder="Enter your full address" required>
+                <button type="submit">Check Address</button>
+            </form>
+            <div id="result"></div>
+        </div>
+
+        <div id="map"></div> </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
